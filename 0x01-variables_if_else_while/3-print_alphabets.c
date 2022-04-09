@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 /*more headers go there*/
 
 /**
@@ -17,7 +16,7 @@ int main(void)
 		c++;
 	}
 
-	char c = 'A';
+	c = 'A';
 
 	while (c <= 'Z')
 	{
