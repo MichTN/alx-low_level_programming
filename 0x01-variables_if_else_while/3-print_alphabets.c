@@ -3,7 +3,7 @@
 
 /**
  * main - main block
- * Description: prins aplhabet in lwoer case, then in upper case, followed by a new line
+ * Description: lower case and upper case alphabet
  * Return: Always 0 (Success)
  */
 int main(void)
