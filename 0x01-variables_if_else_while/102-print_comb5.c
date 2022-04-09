@@ -9,7 +9,8 @@
  * All numbers should be printed with two digits. 1 should be printed as 01
  * The combination of numbers must be separated by comma, followed by a space
  * The combinations of numbers should be printed in ascending order
- * 00 01 and 01 00 are considered as the same combination of the numbers 0 and 1
+ * 00 01 and 01 00 are considered as the same combination 
+ * of the numbers 0 and 1
  * Return: 0
  */
 int main(void)
@@ -37,15 +38,12 @@ int main(void)
 				putchar(f_d);
 				putchar(l_d);
 				putchar(' ');
-
 				putchar(f_d2);
-
 				putchar(l_d2);
 
 				if (c != 98)
 				{
 					putchar(',');
-
 					putchar(' ');
 				}
 			}
