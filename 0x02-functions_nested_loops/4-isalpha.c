@@ -2,7 +2,7 @@
 
 /**
  * main - Entry
- * _isalpha - check fo loer case letter
+ * Description: _isalpha - check fo loer case letter
  * @c : character to check the case
  * Return 0 or 1
  */
