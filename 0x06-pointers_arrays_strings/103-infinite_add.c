@@ -3,8 +3,9 @@
 /**
  * infinite_add - adds 2numbers
  * @n1: number one
- * @n@: number two
+ * @n2: number two
  * @r:buffer that the function will use to store the result
+ * @r: buffer size
  * Return: the pointer to dest
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
@@ -37,6 +38,10 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			*(r + bg) = '0';
 		if (c1 > 0)
 			c1--, dr1 = *(n1 + c1) - 48;
+		else
+			dr1 = 0;
+		if (c2 > 0)
+			c2--, dr2 = *(n2 + c2) - 48;
 		else
 			dr2 =0;
 		bg--, size_r--;
