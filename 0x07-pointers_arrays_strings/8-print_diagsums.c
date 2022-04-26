@@ -1,4 +1,4 @@
-#include "mian.h"
+#include "main.h"
 #include <stdio>
 /**
  * print_diagsums - prints sum of numbers in diagonals of a square
