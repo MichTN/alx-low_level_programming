@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio>
+#include <stdio.h>
 /**
  * print_diagsums - prints sum of numbers in diagonals of a square
  * @a: input square array
