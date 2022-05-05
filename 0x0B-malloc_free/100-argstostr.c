@@ -38,7 +38,7 @@ char *argstostr(int ac, char **av)
 	}
 	R = 0;
 
-	for (i = 0; i < ac; i++);
+	for (i = 0; i < ac; i++)
 	{
 		len = _strlen(av[i]) + 1;
 		R += len;
