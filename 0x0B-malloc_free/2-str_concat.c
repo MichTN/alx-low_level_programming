@@ -10,13 +10,13 @@
 int _strlen(char *s)
 {
 	int l = 0;
-	
+
 	while (*s != '\0')
 	{
 		s++;
 		l++;
 	}
-	return (l);
+	return (1);
 }
 
 /**
@@ -30,7 +30,7 @@ char *str_concat(char *s1, char *s2)
 {
 	unsigned int l1, l2;
 	char *conc, *tmp;
-	
+
 	if (!s1)
 		s1 = "";
 	else
@@ -51,6 +51,5 @@ char *str_concat(char *s1, char *s2)
 
 	while ((*tmp++ = *s2++))
 		;
-	
 	return (conc);
 }
