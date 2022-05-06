@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
 /**
  * _strlen - length of a string
@@ -20,36 +21,46 @@ int _strlen(char *s)
 }
 
 /**
- * str_concat - Concat 2 strings.
- * @s1: string
- * @s2: string
- * Return: char
+ *argstostr - concat
+ * @ac: count
+ * @av: vector
+ * Return: string
  */
 
-char *str_concat(char *s1, char *s2)
+char *argstostr(int ac, char **av)
 {
-	unsigned int l1, l2;
-	char *conc, *tmp;
+	int i, j, k;
+	int len, R = 0;
+	char *p;
 
-	if (!s1)
-		s1 = "";
-	else
-		l1 = _strlen(s1);
+	if (!ac || !av)
+	{
+		return (NULL);
+	}
+	R = 0;
 
-	if (!s2)
-		s2 = "";
-	else
-		l2 = _strlen(s2);
+	for (i = 0; i < ac; i++)
+	{
+		len = _strlen(av[i]) + 1;
+		R += len;
+	}
+	p = malloc(sizeof(char) * R + 1);
 
-	conc = malloc(l1 + l2 + 1);
-	if (!conc)
-		return (0);
+	if (!p)
+	{
+		return (NULL);
+	}
 
-	tmp = conc;
-	while (*s1)
-		*tmp++ = *s1++;
+	for (i = 0; i < ac; i++)
+	{
+		len = _strlen(av[i]);
 
-	while ((*tmp++ = *s2++))
-		;
-	return (conc);
+		for (j = 0; j < len; j++, k++)
+		{
+			p[k] = av[i][j];
+		}
+		p[k++] = '\n';
+	}
+	p[k] = '\0';
+	return (p);
 }

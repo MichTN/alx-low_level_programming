@@ -1,66 +1,48 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * _strlen - length of a string
- * @s: input char
- * Return: length of a string
+ * _strlen - find length of a string
+ * @s: string
+ * Return: int
  */
 
 int _strlen(char *s)
 {
-	int l = 0;
+	int size = 0;
 
-	while (*s != '\0')
-	{
-		s++;
-		l++;
-	}
-	return (1);
+	for (; s[size] != '\0'; size++)
+		;
+	return (size);
 }
 
 /**
- *argstostr - concat
- * @ac: count
- * @av: vector
+ * argstostr - description
+ * @ac: int
+ * @av: arguments
  * Return: string
  */
 
 char *argstostr(int ac, char **av)
 {
-	int i, j, k;
-	int len, R = 0;
-	char *p;
+	int i = 0, nc = 0, j = 0, cmpt = 0;
+	char *s;
 
-	if (!ac || !av)
-	{
+	if (ac == 0 || av == NULL)
 		return (NULL);
-	}
-	R = 0;
+	for (; i < ac; i++, nc++)
+			nc += _strlen(av[i]);
 
+	s = malloc(sizeof(char) * nc + 1);
+	if (s == 0)
+		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
-		len = _strlen(av[i]) + 1;
-		R += len;
+		for (j = 0; av[i][j] != '\0'; j++, cmpt++)
+			s[cmpt] = av[i][j];
+		s[cmpt] = '\n';
+		cmpt++;
 	}
-	p = malloc(sizeof(char) * R + 1);
-
-	if (!p)
-	{
-		return (NULL);
-	}
-
-	for (i = 0; i < ac; i++)
-	{
-		len = _strlen(av[i]);
-
-		for (j = 0; j < len; j++, k++)
-		{
-			p[k] = av[i][j];
-		}
-		p[k++] = '\n';
-	}
-	p[k] = '\0';
-	return (p);
+	s[cmpt] = '\0';
+	return (s);
 }
