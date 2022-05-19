@@ -1,19 +1,11 @@
 #include "lists.h"
 
 /**
- * free_list - frees a list_t
- * @head: pointer to head of list.
- * Return: 0.
+ * print - prints before main
+ * Return: void.
  */
-void free_list(list_t *head)
+void print(void)
 {
-	list_t *temp;
-
-	while (head != NULL)
-	{
-		temp = head;
-		free(temp->str);
-		head = head->next;
-		free(temp);
-	}
+	printf("You're beat! and yet, you must allow,");
+	printf("\nI bore my house upon my back!\n");
 }
